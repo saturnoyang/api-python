@@ -109,3 +109,26 @@ async def continue_user_registration(request: UserRegistrationRequest):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error interno del servidor al procesar el registro: {str(e)}"
         )
+
+# Modelo para el login de Rumbita
+class RumbitaLoginRequest(BaseModel):
+    email: EmailStr
+    clave: str
+    ubicacion: Optional[str] = None
+
+@router.post("/rumbita-login")
+async def rumbita_login(request: RumbitaLoginRequest):
+    # Aquí iría la lógica de autenticación:
+    # 1. Verificar el email y la clave en la base de datos.
+    # 2. Si son correctos, generar un token de sesión (JWT).
+    # 3. Registrar la ubicación si es necesario.
+
+    # Por ahora, solo devolvemos los datos recibidos para confirmar que el endpoint funciona.
+    print(f"Intento de login para el email: {request.email}")
+    print(f"Ubicación reportada: {request.ubicacion}")
+
+    return {
+        "message": "Login endpoint a ser implementado.",
+        "email": request.email,
+        "ubicacion": request.ubicacion
+    }
