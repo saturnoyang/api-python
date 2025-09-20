@@ -6,6 +6,7 @@ services:
     ports:
       - "8000:8000"
     environment:
+      - DOCKER_BUILDKIT=0
       - DB_HOST=mydb
       - DB_USER=${POSTGRES_USER}
       - DB_PASSWORD=${POSTGRES_PASSWORD}
