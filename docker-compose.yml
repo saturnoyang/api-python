@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DB_HOST=nombre_del_contenedor_bbdd_existente  # <-- El nombre del contenedor existente
+      - DB_HOST=mydb
       - DB_USER=${POSTGRES_USER}
       - DB_PASSWORD=${POSTGRES_PASSWORD}
       - DB_NAME=${POSTGRES_DB}
